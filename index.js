@@ -1,6 +1,6 @@
 const express=require('express');
 const cors = require('cors');
-const users=require('./books');
+const books=require('./books');
 
 const path=require('path');
 
@@ -23,7 +23,7 @@ app.listen(PORT, () => console.log(`Server is Running ${PORT}`));
 
 //GET All USERS
 
-app.get('/api/books',(req,res)=>res.json(users));
+app.get('/api/books',(req,res)=>res.json(books));
 
 //GET Specific USER Based on ID
 
@@ -50,7 +50,7 @@ app.post('/api/books',(req,res)=>{
 
 const newMember={
 
-id: users.length + 1,
+id: books.length + 1,
 
 name: req.body.name,
 
@@ -68,7 +68,7 @@ return res.status(400).json({msg:'NAME and Author must be provided'});
 
 }
 
-users.push(newMember);
+books.push(newMember);
 
 res.json(books);
 
