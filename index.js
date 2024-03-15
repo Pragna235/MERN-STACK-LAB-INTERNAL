@@ -78,7 +78,7 @@ res.json(books);
 
 //DELETE Specific USER Based on ID
 
-app.delete('/api/users/:id', (req, res) => {
+app.delete('/api/books/:id', (req, res) => {
 
 const found = books.some(idFilter(req));
 
@@ -100,7 +100,7 @@ res.status(400).json({ msg: `No member with the id of ${req.params.id}` });
 
 //UPDATE Specific USER Based on ID
 
-app.put('/api/users/:id',(req,res)=>
+app.put('/api/books/:id',(req,res)=>
 
 {
 
